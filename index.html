@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./src/assets/logo.png" />
+  <script src="./src/main.ts" type="module"></script>
+  <link rel="stylesheet" href="./src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeScript Toastify</title>
+</head>
+
+<body class="font-SF-Mono bg-[#121212] text-white">
+
+  <div class="font-sans mt-2 flex items-center justify-center gap-3">
+    <img src="./src/assets/logo.png" alt="TypeScript Toastify Logo" class="w-12" />
+    <h1 class="text-4xl font-bold ">TypeScript Toastify</h1>
+  </div>
+
+  <div class="flex flex-col items-center justify-center">
+    <img src="./src/assets/code-snippet.png" alt="library code snippet" class="rounded-lg shadow-2xl shadow-[#3178C6] max-w-[400px]">
+    <p>Code snippet example</p>
+  </div>
+  
+  <div>
+    <form class="font-SF-Mono">
+
+      <div>
+        <h2>Position:</h2>
+        <div class="flex gap-8 items-center flex-wrap">
+          <div>
+            <input type="radio" name="position" id="position-top-left" value="top-left">
+            <label for="position-top-left">Top-Left</label>
+          </div>
+          <div>
+            <input type="radio" name="position" id="position-top-right" value="top-right" checked>
+            <label for="position-top-right">Top-Right</label>
+          </div>
+          <div>
+            <input type="radio" name="position" id="position-top-center" value="top-center">
+            <label for="position-top-center">Top-Center</label>
+          </div>
+          <div>
+            <input type="radio" name="position" id="position-bottom-left" value="bottom-left">
+            <label for="position-bottom-left">Bottom-Left</label>
+          </div>
+          <div>
+            <input type="radio" name="position" id="position-bottom-right" value="bottom-right">
+            <label for="position-bottom-right">Bottom-Right</label>
+          </div>
+          <div>
+            <input type="radio" name="position" id="position-bottom-center" value="bottom-center">
+            <label for="position-bottom-center">Bottom-Center</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Toast Type:</h2>
+        <div class="flex gap-8 items-center flex-wrap">
+          <div>
+            <input type="radio" name="toast-type" id="toast-type-info" value="info">
+            <label for="toast-type-info">Info</label>
+          </div>
+          <div>
+            <input type="radio" name="toast-type" id="toast-type-success" value="success">
+            <label for="toast-type-success">Success</label>
+          </div>
+          <div>
+            <input type="radio" name="toast-type" id="toast-type-warning" value="warning">
+            <label for="toast-type-warning">Warning</label>
+          </div>
+          <div>
+            <input type="radio" name="toast-type" id="toast-type-error" value="error">
+            <label for="toast-type-error">Error</label>
+          </div>
+          <div>
+            <input type="radio" name="toast-type" id="toast-type-default" value="default" checked>
+            <label for="toast-type-default">Default</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Theme:</h2>
+        <div class="flex gap-8 flex-wrap">
+          <div>
+            <input type="radio" name="theme" id="theme-light" value="light" checked>
+            <label for="theme-light">Light</label>
+          </div>
+          <div>
+            <input type="radio" name="theme" id="theme-dark" value="dark">
+            <label for="theme-dark">Dark</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Options:</h2>
+        <div class="flex flex-wrap items-center gap-8">
+          <div>
+            <input type="checkbox" name="options" id="pauseOnFocusLoss" value="pauseOnFocusLoss" checked>
+            <label for="pauseOnFocusLoss">Pause on Focus Loss</label>
+          </div>
+          <div>
+            <input type="checkbox" name="options" id="pauseOnHover" value="pauseOnHover" checked>
+            <label for="pauseOnHover">Pause on Hover</label>
+          </div>
+          <div>
+            <input type="checkbox" name="options" id="showProgress" value="showProgress" checked>
+            <label for="showProgress">Show Progress</label>
+          </div>
+          <div>
+            <input type="checkbox" name="options" id="canClose" value="canClose" checked>
+            <label for="canClose">Can Close</label>
+          </div>
+          <div>
+            <label for="autoCloseTime">Auto Close Time(ms):</label>
+            <input type="number" name="autoCloseTime" id="autoCloseTime" min="0" value="2000" step="100"
+              class="bg-zinc-800 border border-zinc-700 text-sm rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none">
+          </div>
+          <div>
+            <label for="toastMessage">Toast Message: </label>
+            <input type="text" name="toastMessage" id="toastMessage" placeholder="Enter toast message"
+              class="bg-zinc-800 border border-zinc-700 text-sm rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="submit_btn">Show Toast</button>
+      <button>Clear All</button>
+      <button class="reset_btn">Reset</button>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'SF-Mono';
+  src: url("./src/assets/fonts/SF-Mono.otf") format(otf);
+}
+
+
+h2 {
+  @apply text-2xl font-bold
+}
+
+
+input {
+  @apply accent-[#3178C6]
+}
+
+
+button {
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  border: 0;
+  background-color: #3178C6;
+  transition: all 0.3s ease;
+  box-shadow: #1E4C7E 0px 5px 0px 0px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: #1E4C7E 0px 4px 0px 0px;
+  }
+
+  &:active {
+    box-shadow: #3178C6 0px 0px 0px 0px;
+    transform: translateY(1px);
+    transition: 200ms;
+  }
+}
