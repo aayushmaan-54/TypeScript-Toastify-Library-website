@@ -1,8 +1,14 @@
+import Toast from "ts-toastify";
+import { Position, ToastType } from "ts-toastify/lib/type/type";
+
 
 const form = document.querySelector<HTMLFormElement>('form')!;
 const resetButton = document.querySelector<HTMLButtonElement>('.reset_btn')!;
+const submitButton = document.querySelector<HTMLButtonElement>('.submit_btn')!;
+const clearAllButton = document.querySelector<HTMLButtonElement>('.clear_btn')!;
 
-resetButton.addEventListener('click', () => {
+resetButton.addEventListener('click', (event) => {
+  event.preventDefault();
   form.reset();
 
   document.querySelector<HTMLInputElement>('input[name="position"][value="top-right"]')!.checked = true;
@@ -13,11 +19,11 @@ resetButton.addEventListener('click', () => {
   document.querySelector<HTMLInputElement>('input[name="options"][value="showProgress"]')!.checked = true;
   document.querySelector<HTMLInputElement>('input[name="options"][value="canClose"]')!.checked = true;
   document.querySelector<HTMLInputElement>('#autoCloseTime')!.value = '2000';
-  document.querySelector<HTMLInputElement>('#toastMessage')!.value = '';
+  document.querySelector<HTMLInputElement>('#toastMessage')!.value = '🦚 TypeScript Toastify';
 });
 
 
-form.addEventListener('submit', (event) => {
+submitButton.addEventListener('click', (event) => {
   event.preventDefault();
 
   const position = document.querySelector<HTMLInputElement>('input[name="position"]:checked')!.value;
@@ -30,27 +36,22 @@ form.addEventListener('submit', (event) => {
   const autoCloseTime = parseInt((document.querySelector('#autoCloseTime') as HTMLInputElement)!.value || '0', 10);
   const toastMessage = (document.querySelector('#toastMessage') as HTMLInputElement)!.value;
 
-  // const toast = new TS_Toast({
-  //   position,
-  //   toastMsg: toastMessage,
-  //   autoCloseTime,
-  //   onClose: () => {
-  //     alert('TS Toast 🍞');
-  //   },
-  //   canClose: options.includes('canClose'),
-  //   showProgress: options.includes('showProgress'),
-  //   pauseOnHover: options.includes('pauseOnHover'),
-  //   pauseOnFocusLoss: options.includes('pauseOnFocusLoss'),
-  //   type: toastType,
-  //   theme,
-  // });
-
-  console.log({
-    position,
-    toastType,
-    theme,
-    options,
-    autoCloseTime,
-    toastMessage,
+  const toast = new Toast({
+    position: position as Position,
+    toastMsg: toastMessage,
+    autoCloseTime: autoCloseTime,
+    canClose: options.includes('canClose'),
+    showProgress: options.includes('showProgress'),
+    pauseOnHover: options.includes('pauseOnHover'),
+    pauseOnFocusLoss: options.includes('pauseOnFocusLoss'),
+    type: toastType as ToastType,
+    theme: theme as 'dark' | 'light',
   });
+
+
+  clearAllButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    toast.remove();
+  })
+
 });

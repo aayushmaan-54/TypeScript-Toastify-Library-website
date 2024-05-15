@@ -3,30 +3,50 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="./src/assets/logo.png" />
+  <link rel="icon" href="./src/assets/favicon.png" />
   <script src="./src/main.ts" type="module"></script>
   <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TypeScript Toastify</title>
 </head>
 
-<body class="font-SF-Mono bg-[#121212] text-white">
+<body class="font-SF-Mono bg-[#0a0c1f] text-white mb-8">
 
-  <div class="font-sans mt-2 flex items-center justify-center gap-3">
-    <img src="./src/assets/logo.png" alt="TypeScript Toastify Logo" class="w-12" />
-    <h1 class="text-4xl font-bold ">TypeScript Toastify</h1>
+  <div class="font-sans mt-2 flex items-center justify-center gap-3 mb-10">
+    <img src="./src/assets/logo.png" alt="TypeScript Toastify Logo" class="w-12 mt-3 logo" />
+    <h1 class="text-4xl font-bold text-[#3178C6] heading"><a href="https://github.com/aayushmaan-54/TypeScript-Toastify-Library/tree/main" target="_blank">TypeScript Toastify 📎</a></h1>
   </div>
 
   <div class="flex flex-col items-center justify-center">
-    <img src="./src/assets/code-snippet.png" alt="library code snippet" class="rounded-lg shadow-2xl shadow-[#3178C6] max-w-[400px]">
-    <p>Code snippet example</p>
-  </div>
-  
-  <div>
-    <form class="font-SF-Mono">
+    <pre class="rounded-lg snippet">
+      <code class="border-2 border-[#3178C6]">import Toast from "ts-toastify";
 
-      <div>
-        <h2>Position:</h2>
+const toast = new Toast({
+  position: &quot;top-right&quot;,
+  toastMsg: &quot;🦚 TypeScript Toastify&quot;,
+  autoCloseTime: 2000,
+  canClose: true,
+  showProgress: true,
+  pauseOnHover: true,
+  pauseOnFocusLoss: true,
+  type: &quot;default&quot;,
+  theme: "light"
+});</code>
+    </pre>
+    <p class="font-bold text-lg underline underline-offset-2 text-[#3178C6] -mt-8 snippetTitle">Code snippet example</p>
+  </div>
+
+  <div class="ml-10">
+    <form class="font-SF-Mono">
+      <div class="flex gap-10 mt-16 flex-wrap">
+        <button type="submit" class="submit_btn">Show Toast</button>
+        <button class="clear_btn">Clear All</button>
+        <button class="reset_btn">Reset</button>
+      </div>
+
+      <div class="mb-16">
+        <h3 class="mb-3 underline underline-offset-2 text-[#3178C6]">Position:</h3>
         <div class="flex gap-8 items-center flex-wrap">
           <div>
             <input type="radio" name="position" id="position-top-left" value="top-left">
@@ -55,8 +75,8 @@
         </div>
       </div>
 
-      <div>
-        <h2>Toast Type:</h2>
+      <div class="mb-16">
+        <h3 class="mb-3 underline underline-offset-2 text-[#3178C6]">Toast Type:</h3>
         <div class="flex gap-8 items-center flex-wrap">
           <div>
             <input type="radio" name="toast-type" id="toast-type-info" value="info">
@@ -81,8 +101,8 @@
         </div>
       </div>
 
-      <div>
-        <h2>Theme:</h2>
+      <div class="mb-16">
+        <h3 class="mb-3 underline underline-offset-2 text-[#3178C6]">Theme:</h3>
         <div class="flex gap-8 flex-wrap">
           <div>
             <input type="radio" name="theme" id="theme-light" value="light" checked>
@@ -94,8 +114,9 @@
           </div>
         </div>
       </div>
-      <div>
-        <h2>Options:</h2>
+
+      <div class="mb-8">
+        <h3 class="mb-3 underline underline-offset-2 text-[#3178C6]">Options:</h3>
         <div class="flex flex-wrap items-center gap-8">
           <div>
             <input type="checkbox" name="options" id="pauseOnFocusLoss" value="pauseOnFocusLoss" checked>
@@ -116,20 +137,190 @@
           <div>
             <label for="autoCloseTime">Auto Close Time(ms):</label>
             <input type="number" name="autoCloseTime" id="autoCloseTime" min="0" value="2000" step="100"
-              class="bg-zinc-800 border border-zinc-700 text-sm rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none">
+              class="bg-zinc-800 border border-zinc-700 text-sm rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none max-w-[75px]">
           </div>
           <div>
             <label for="toastMessage">Toast Message: </label>
             <input type="text" name="toastMessage" id="toastMessage" placeholder="Enter toast message"
-              class="bg-zinc-800 border border-zinc-700 text-sm rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none">
+              value="🦚 TypeScript Toastify"
+              class="bg-zinc-800 border border-zinc-700 text-sm rounded-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 p-2.5 outline-none w-[280px] input-toast">
           </div>
         </div>
       </div>
-      <button type="submit" class="submit_btn">Show Toast</button>
-      <button>Clear All</button>
-      <button class="reset_btn">Reset</button>
+
+
     </form>
   </div>
+
+
+  <div class="doc">
+    <hr class="mt-11 opacity-50">
+    <h1 class="text-[#3178C6]">Features: </h1>
+    <ol class="list-disc flex flex-col gap-3">
+      <li>Easy to set up</li>
+      <li>Super easy to customize</li>
+      <li>Has onClose function, which runs function you define when toast closes</li>
+      <li>Can remove a toast programmatically</li>
+      <li>Update toast in between</li>
+      <li>Pause toast when the window loses focus 👁</li>
+      <li>Pause toast on toast hover</li>
+      <li>Fancy progress bar to display the remaining time</li>
+      <li>Dark mode 🌑</li>
+      <li>Set custom position</li>
+      <li>Set toast closing time</li>
+      <li>Can use different types of toast like info, error, warning</li>
+      <li>And much more!</li>
+    </ol>
+  </div>
+
+
+  <div class="mx-16 doc font-medium">
+
+    <hr class="mt-11 opacity-50">
+
+    <h1 class="mt-10 mb-5 text-center text-[#3178C6]">Documentation</h1>
+    <p><span class="code">TS-Toastify</span> is a TypeScript library for creating customizable toast notifications in
+      web applications.
+      This documentation provides an overview of the available options, how to create a toast, and their respective
+      types.</p>
+
+    <h3>Installation</h3>
+    <p>To use TypeScript Toastify in your project, you can install it via npm:</p>
+    <pre>
+      <code>npm i ts-toastify</code>
+    </pre>
+
+    <h3>Usage</h3>
+    <p>To create a toast using TypeScript Toastify, you need to instantiate the Toast class with the desired options.
+      Here's how you can create a toast:</p>
+    <pre>
+      <code>import Toast from 'ts-toastify';
+
+const toast = new Toast({
+  position: &quot;top-right&quot;,
+  toastMsg: &quot;🌏 Hello, World!&quot;,
+  autoCloseTime: 4500,
+  canClose: true,
+  showProgress: true,
+  pauseOnHover: true,
+  pauseOnFocusLoss: true,
+  type: &quot;default&quot;,
+  theme: "dark"
+});</code>
+    </pre>
+
+    <h2>Options</h2>
+    <p><span class="code">TS-Toastify</span> supports the following options: </p>
+    <h3>position (string)</h3>
+    <p>Specifies the position where the toast notification will appear on the screen.</p>
+    <p class="font-bold">Options:</p>
+    <ul>
+      <li>"top-left"</li>
+      <li>"top-right"</li>
+      <li>"top-center"</li>
+      <li>"bottom-left"</li>
+      <li>"bottom-right"</li>
+      <li>"bottom-center"</li>
+    </ul>
+
+    <h3>toastMsg (string)</h3>
+    <p>The message to be displayed in the toast notification.</p>
+
+    <h3>autoCloseTime (number)</h3>
+    <p>Specifies the duration (in milliseconds) after which the toast will automatically close.</p>
+
+    <h3>canClose (boolean)</h3>
+    <p>Determines whether the user can manually close the toast by clicking on it.</p>
+
+    <h3>showProgress (boolean)</h3>
+    <p>Specifies whether to show a progress bar indicating the time remaining before the toast closes automatically.</p>
+
+    <h3>pauseOnHover (boolean)</h3>
+    <p>Determines whether the toast progress and auto-close timer pause when the mouse hovers over the toast.</p>
+
+    <h3>pauseOnFocusLoss (boolean)</h3>
+    <p>Specifies whether to pause the toast progress and auto-close timer when the page loses focus.</p>
+
+    <h3>type (string)</h3>
+    <p>Specifies the type of toast notification. Options include:</p>
+    <ul>
+      <li>"info"</li>
+      <li>"success"</li>
+      <li>"warning"</li>
+      <li>"error"</li>
+      <li>"default"</li>
+    </ul>
+
+    <h3>theme (string)</h3>
+    <p>Specifies the theme of the toast notification. Options include:</p>
+    <ul>
+      <li>"dark"</li>
+      <li>"light"</li>
+    </ul>
+
+    <h2>Methods</h2>
+    <h3>update(options: Object)</h3>
+    <p>Updates the toast notification with new options.</p>
+    <pre>
+      <code>const toast = new Toast({ });
+toast.update({ toastMsg: 'New message' });</code>
+    </pre>
+
+    <h3>remove( )</h3>
+    <p>Removes the toast notification from the screen.</p>
+    <pre>
+      <code>const toast = new Toast({ });
+toast.remove( );</code>
+    </pre>
+
+
+    <h2>Events</h2>
+    <h3>onClose( )</h3>
+    <p>A function that runs when the toast notification is closed.</p>
+    <pre>
+      <code>const toast = new Toast({ 
+  onClose: () =&gt; 
+  console.log('Toast closed 😶‍🌫️') 
+});</code>
+    </pre>
+
+    <h3>Example: </h3>
+    <pre>
+      <code>import Toast from 'ts-toastify';
+
+const toast = new Toast({
+  position: "top-right",
+  toastMsg: "🌏 Hello, World!",
+  onClose: () => { alert("Toast closed 😶‍🌫️") },
+  autoCloseTime: 3000,
+  canClose: true,
+  showProgress: true,
+  pauseOnHover: true,
+  pauseOnFocusLoss: true,
+  type: "info",
+  theme: 'light'
+});</code>
+    </pre>
+
+    <h3>Conclusion</h3>
+    <p><span class="code">TS-Toastify</span> offers a simple and customizable way to implement toast notifications in
+      your TypeScript web
+      applications. With various options for positioning, styling, and behavior, you can tailor the toast notifications
+      to suit your application's needs.</p>
+
+  </div>
+
+  
+  <hr class="mt-11 opacity-50 px-16">
+  <div class="px-16 doc flex flex-col items-center">
+    
+    <h1 class="text-[#3178C6]">License</h1>
+    <p>Licensed under MIT</p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
 </body>
 
 </html>

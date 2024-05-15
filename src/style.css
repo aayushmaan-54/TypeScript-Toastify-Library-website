@@ -2,19 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: 'SF-Mono';
   src: url("./src/assets/fonts/SF-Mono.otf") format(otf);
 }
 
 
+::selection {
+  background-color: #3178C6;
+  color: #0a0c1f;
+}
+
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
 h2 {
-  @apply text-2xl font-bold
+  @apply text-3xl font-extrabold mb-5 mt-9 text-[#3178C6]
+}
+
+
+h3 {
+  @apply text-xl font-extrabold mb-2 mt-9
+}
+
+
+h1 {
+  @apply text-5xl font-bold mb-5 mt-9
+}
+
+
+code {
+  @apply w-fit rounded-md mx-auto
 }
 
 
 input {
   @apply accent-[#3178C6]
+}
+
+
+.doc {
+  width: min(80vw, 900px);
+  margin: 0 auto;
+}
+
+p {
+  @apply leading-8
+}
+
+ul > li, .code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background-color: #282c34;
+  width: fit-content;
+  padding: 4px 5px;
+  border-radius: 4px;
+  color: #3178C6;
+  font-weight: 800;
+}
+
+
+ul > li {
+  margin-bottom: 9px;
 }
 
 
@@ -36,4 +89,73 @@ button {
     transform: translateY(1px);
     transition: 200ms;
   }
+}
+
+
+@media screen and (max-width: 692px) {
+  pre {
+    font-size: 13px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
+  }
+
+  .snippet {
+    font-size: 10px;
+  }
+
+  .snippetTitle {
+    margin-top: -24px;
+  }
+}
+
+
+@media screen and (max-width: 492px) {
+  h2 {
+    @apply text-xl font-extrabold mb-5 mt-9 text-[#3178C6]
+  }
+  
+  
+  h3 {
+    @apply text-lg font-extrabold mb-2 mt-9
+  }
+  
+  
+  h1 {
+    @apply text-2xl font-bold mb-5 mt-9
+  }
+
+  .heading {
+    @apply text-2xl
+  }
+
+  .logo {
+    @apply w-9 mt-4
+  }
+
+  .input-toast {
+    width: 80vw;
+  }
+}
+
+
+::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #0a0c1f;
+}
+
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #0a0c1f;
+}
+
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #3178C6;
 }
