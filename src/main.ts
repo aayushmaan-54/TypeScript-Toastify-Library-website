@@ -1,5 +1,5 @@
-import Toast from "ts-toastify";
-import { Position, ToastType } from "ts-toastify/lib/type/type";
+import Toast from "typescript-toastify";
+import { Position, ToastType } from "typescript-toastify/lib/type/type";
 
 
 const form = document.querySelector<HTMLFormElement>('form')!;
